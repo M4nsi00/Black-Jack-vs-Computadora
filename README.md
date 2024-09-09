@@ -1,5 +1,3 @@
-TC Proyecto A01712805
-
 "Contexto"
 
 
