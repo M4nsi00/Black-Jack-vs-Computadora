@@ -1,64 +1,114 @@
-#importamos el valor random para usar al repartir cartas
+#Importar random para elegir al azar dos cartas
 import random
 
-#puntos iniciales del jugador
-puntos_jugador = 1000
-#Checamos si el valor esta ajustado
-print (puntos_jugador)
-
-#Cree una dunción para el maso, pero necesita el uso de matrices para un mejor funcionamiento
-#Función para crear un maso de cartas
-def crear_maso():
-    # Cantidad de cartas sin contar los comodines (JOKER)
-    maso = ""
-    #Valor de los 4 palos
-    for palo in ("Corazones", "Diamantes", "Tréboles", "Picas"):
-        #Valores del 2 al 10, se termina en 11 para contar el valor 10
-        for valor in range (2,11):
-            print(str(valor) + " de " + palo)
-        #Valores de A,J,Q,K
-        for caras in ("J", "Q", "K", "A"):
-            print(str(caras) + " de " + palo)
-
-#Crear función para obtener el valor de la mano
-def valor_mano(carta1, carta2, carta3=None):
-    valor = 0
-    aces = 0
-    for carta in (carta1, carta2, carta3):
-        if valor_mano in ("J", "Q", "K"):
-            valor +=10
-        elif valor_mano == "A":
-            valor +=11
-            ases +=1
-        else:
-            valor += int(carta1) + int(carta2)
-        
-        #Ajustar cuando el valor de supera 21 puntos y si hay ases
-        while valor > 21 and aces:
-            valor -= 10
-            ases -= 1
-    print("El valor de la mano es: ", valor)
-
-#Turno del jugador
-def turno_jugador(carta1, carta2):
-    #Primer turno con dos cartas
-    print("Tus cartas son ", carta1, carta2)
-    valor_mano = 0
+#Crear jugador
+def jugador():
+    puntos_jugador = 1000
+    nombre = input("Id del jugador: ")
+    print (nombre, "tienes", puntos_jugador, "puntos")
+'''
+Caso de prueba nombre
+Id del jugador: Mansi
+Mansi tienes  1000 puntos
+'''
+#Crear funcion que cree las cartas
+def cartas():
+    # Usar random para elegir un número de carta, asignar los valores de J, Q, K, A
+    carta = random.randint(1, 13)
+    if carta == 11:
+        carta = "J"
+    elif carta == 12:
+        carta = "Q"
+    elif carta == 13:
+        carta = "K"
+    elif carta == 1:
+        carta = "A"
     
-    #Calcular valor inicial de la mano
-    if carta1 == "A" or carta2 == "A":
-        valor_mano += 11
-    elif carta1 in ("J", "Q", "K") or carta2 in ("J", "Q", "K"):
-        valor_mano += 10
+    # Usar random para elegir uno de los 4 palos de cartas
+    palo = random.randint(1, 4)
+    if palo == 1:
+        palo = "Treboles"
+    elif palo == 2:
+        palo = "Picas"
+    elif palo == 3:
+        palo = "Corazones"
+    elif palo == 4:
+        palo = "Diamantes"
+    
+    # Imprimir carta
+    print(carta, "de", palo)
+    
+    # Definir el valor de cada carta
+    valor_carta = 0
+    if carta == "J" or carta == "Q" or carta == "K":
+        valor_carta = 10
+    elif carta == "A":
+        valor_carta = 11
     else:
-        valor_mano += int(carta1) + int(carta2)
-    print ("Valor mano", valor_mano)
-    
-    #Preguntar si el jugador quiere otra carta
-    while valor_mano < 21:
-        mensaje = input("¿Quiéres otra carta? (si/no)")
-        if mensaje == "si" or mensaje == "Si":
-            nueva_carta = input("Nueva carta: ")
+        valor_carta = carta
+    # Aquí carta ya es un número
+    # Retornar el valor de la carta
+    return valor_carta
+'''
+Caso de prueba carta
+8 de diamantes
+K de Picas
+'''
 
-crear_maso()
-valor_mano(2,9)
+#Función para elegir cartas y decidir si se quiere seguir jugando o no
+def partida():
+    jugador()
+    carta1 = cartas()
+    carta2 = cartas()
+    suma_cartas = carta1 + carta2
+    print("Suma ", suma_cartas)
+   #Ciclo para terminar una partida si el jugador tiene más de 21 puntos o en el caso que tenga menos de 21 preguntar si quiere otra carta 
+    while True:
+        if suma_cartas >= 21:
+            print("Fin de la partida")
+            break
+
+        respuesta = input("¿Quieres otra carta? (si/no) ")
+        if respuesta.lower() == "si":
+            carta3 = cartas()
+            suma_cartas += carta3
+            print("Suma ", suma_cartas)
+        elif respuesta.lower() == "no":
+            print("Fin de la partida")
+            break
+        else:
+            print("Respuesta no válida. Por favor, responde con 'si' o 'no'")
+'''
+Caso de prueba partida
+Id del jugador: Mansi
+Mansi tienes 1000 puntos
+8 de Picas
+J de Treboles
+Suma 18
+¿Quieres otra carta? (si/no) si
+5 de Corazones
+Suma 23
+Fin de la partida
+'''
+
+def menu():
+    print("1. Prueba función jugador")
+    print("2. Prueba función crear una carta")
+    print("3. Prueba función jugar una partida (Probar todas las funciones)")
+    print("4. Salir")
+def prueba():
+    while True:
+        menu()
+        respuesta = int(input("¿Qué quieres hacer? "))
+        if respuesta == 1:
+            jugador()
+        elif respuesta == 2:
+            cartas()
+        elif respuesta == 3:
+            partida()
+        elif respuesta == 4:
+            print("Saliendo")
+            break
+        else:
+            print("Valor no valido")
+prueba()
