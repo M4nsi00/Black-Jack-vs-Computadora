@@ -6,31 +6,36 @@ A diferencia de la versión clásica aquí el jugador va a tener una cantidad in
 
 Álgoritmo:
 
-Entrada: Cantidad de puntos para apostar, Semilla aleatoria para barajar las cartas
+Entrada: 
 
-Proceso: Pedir cantidad de puntos a apostar
+1. Cantidad de puntos para apostar, Semilla aleatoria para barajar las cartas
 
-Crear una baraja de 52 cartas y crear mazoz para el jugador y la computadora
+2. Proceso: Pedir cantidad de puntos a apostar
 
-Repartir dos cartas al jugador
+3. Crear una baraja de 52 cartas y crear mazoz para el jugador y la computadora
 
-Preguntar si el jugador quiere otra carta o deja ahí su mazo
+4. Repartir dos cartas al jugador
 
-Si el jugador elige otra carta y la suma de los puntos de las cartas es mayor a 21 imprimr "La casa gana"
+5. Preguntar si el jugador quiere otra carta o deja ahí su mazo
 
-Si el juagodr elige otra carta y la suma de puntos es menor a 21 cartas preguntar si quiere otra carta, en el caso que quiera otra carta verificar el paso anterior y este
+6. Si el jugador elige otra carta y la suma de los puntos de las cartas es mayor a 21 imprimr "La casa gana"
 
-Si el jugador decide quedarse con solo dos cartas, empezar a repartir cartas a la computadora
+7. Si el juagodr elige otra carta y la suma de puntos es menor a 21 cartas preguntar si quiere otra carta, en el caso que quiera otra carta verificar el paso anterior y este
 
-Si la computadora esta más cerca a los 21 puntos o tiene 21 puntos imprimir "La casa gana"
+8. Si el jugador decide quedarse con solo dos cartas, empezar a repartir cartas a la computadora
 
-Si el jugador esta más cerca a los 21 puntos o tiene 21 puntos imprimir "El jugador gana"
+9. Si la computadora esta más cerca a los 21 puntos o tiene 21 puntos imprimir "La casa gana"
 
-Si tanto el jugador como la computadora obtuvieron el mismo resultado imprimr "Es un empate"
+10. Si el jugador esta más cerca a los 21 puntos o tiene 21 puntos imprimir "El jugador gana"
 
-Si el jugador gano duplicar los puntos apostados, si perdio quitarle los puntos apostados, si fue un empate devolver los puntos apostados
+11. Si tanto el jugador como la computadora obtuvieron el mismo resultado imprimr "Es un empate"
 
-Se repite este proceso hasta que el jugador pierda todos sus puntos o llegue a los 10,000 puntos, si pierde imprimir "Perdio la partida", si el jugador gana poner "Felicidades ganaste"
+12. Si el jugador gano duplicar los puntos apostados, si perdio quitarle los puntos apostados, si fue un empate devolver los puntos apostados
+
+13. Se repite este proceso hasta que el jugador pierda todos sus puntos o llegue a los 10,000 puntos, si pierde imprimir "Perdio la partida", si el jugador gana poner "Felicidades ganaste"
 
 
 Salida: Mensaje, suma o perdida de puntos
+
+
+Veni Vidi Vici
