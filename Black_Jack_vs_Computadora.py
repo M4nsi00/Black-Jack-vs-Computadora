@@ -1,12 +1,30 @@
 #Importar random para elegir al azar dos cartas
 import random
 
-#Crear jugador
-def jugador():
-    puntos_jugador = 1000
-    nombre = input("Id del jugador: ")
-    return puntos_jugador, nombre
+#Funciones del nombre del jugador
+def guardar_jugador(n): #Funcion para guardar el archivo del nombre del jugador
+    archivo = open("jugador.txt", "w+")
+    archivo.write(n)
+    print("Nombre guardado")
 
+def nombre_jugador(): #Función para checar si hay un archivo con un nombre o debes de crear un nombre
+    archivo = open("jugador.txt","r")
+    contenido = archivo.read().strip() #Variable para guardar el contendio
+    archivo.close()
+    
+    if contenido: #Checar si hay algo dentro del archivo
+        return contenido
+    else: #Si no hay nada pedir el nombre
+        nombre = input("No se encontró un nombre guardado. Ingresa el nombre del jugador: ")
+        guardar_jugador(nombre)
+        return nombre
+
+def cambiar_jugador(): #Función para cambiar el nombre de un jugador
+    nuevo_nombre = input("Nombre del jugador: ")
+    guardar_jugador(nuevo_nombre)
+    print(f"Nombre cambiado a: {nuevo_nombre}")
+    return nuevo_nombre  # Devuelve el nuevo nombre
+        
 #Crear funcion que cree el mazo
 def crear_mazo():
 # Crear matriz del mazo
@@ -83,9 +101,14 @@ def partida(mazo):
         return -1
 
 def black_jack():
-    puntos_jugador, nombre = jugador()
-    print (f"{nombre} tienes {puntos_jugador} puntos")
-    while puntos_jugador > 0 and puntos_jugador<10000:
+    nombre = nombre_jugador()
+    puntos_jugador = 1000
+    print(f"{nombre} tienes {puntos_jugador} puntos")
+    cambiar_nombre = input("¿Quieres cambiar el nombre? si/no ").lower()
+    if cambiar_nombre == "si":
+        nombre = cambiar_jugador()  # Actualiza el nombre
+    print(f"{nombre} tienes {puntos_jugador} puntos")
+    while puntos_jugador > 0 and puntos_jugador < 10000:
         print(f"Puntos actuales: {puntos_jugador}")
         mazo = crear_mazo()
         while True:
@@ -100,37 +123,36 @@ def black_jack():
         if resultados_de_la_ronda == 1:
             puntos_jugador += apuesta
         elif resultados_de_la_ronda == -1:
-            puntos_jugador = puntos_jugador - apuesta
-        elif resultados_de_la_ronda == 0:
-            puntos_jugador = puntos_jugador
+            puntos_jugador -= apuesta
             
     if puntos_jugador >= 10000:
         print(f"{nombre} le ganaste a la computadora :)")
     elif puntos_jugador <= 0:
         print(f"{nombre} perdiste :(")
 
-def menu():
-    print("1. Prueba información jugador")
-    print("2. Prueba crear mazo")
-    print("3. Jugar black jack")
-    print("4. Salir")
-
 def pruebas():
+    print("Se hara una prueba para crear un mazo con las cartas revueltas")
+    mazo = crear_mazo()
+    print("Mazo: ")
+    print(mazo)
+
+def menu_main():
+    print("1. Jugar black jack")
+    print("2. Pruebas")
+    print("3. Salir")
+    
+def main():
     while True:
-        menu()
-        v = int(input("¿Qué quieres hacer? "))
-        if v==1:
-            puntos_jugador, nombre = jugador()
-            print (f"{nombre} tienes {puntos_jugador} puntos")
-        elif v==2:
-            mazo = crear_mazo()
-            print(mazo)
-        elif v==3:
+        menu_main()
+        decision_main = int(input("¿Que quieres hacer? "))
+        if decision_main==1:
             black_jack()
-        elif v==4:
+        elif decision_main==2:
+            pruebas()
+        elif decision_main==3:
             print("Saliendo...")
             break
         else:
             print("Valor no valido")
             
-pruebas() 
+main()
