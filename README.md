@@ -1,6 +1,5 @@
 "Contexto"
 
-
 El proyecto será el juego "BlackJack", un juego de cartas en el que se tiene el objetivo de ganarle a la casa (Computadora"). Para ganarle a la computadora el jugador debe de tener o estar cerca a 21 puntos sumados en sus cartas, si el jugador tiene más puntos pierde automaticamente, si la computadora esta más cerca de los 21 puntos está gana. 
 A diferencia de la versión clásica aquí el jugador va a tener una cantidad inicial de puntos, en este caso 1000 puntos, y tiene el objetivo de conseguir 10,000 puntos, cada ronda puede decidir apostar cierta cantidad de puntos y si gana duplica el valor apostado; Si pierde e jugador perdera los puntos apostados. El juego termina cuado el jugador consigue 10,000 puntos o pierde todos sus puntos.
 
@@ -36,6 +35,19 @@ Entrada:
 
 
 Salida: Mensaje, suma o perdida de puntos
+
+¿Cómo usar?
+
+1. Antes que nada recomiendo instalar python para poder correr el programa, puedes usar el siguiente link para eso: https://www.youtube.com/watch?v=yXoiFeK4_Sk
+
+2. Descargar el archivo Black_Jack_vs_Computadora.py.
+
+3. Ejecutar el archivo, se debería de poder abrir en python
+
+4. Para jugar es sencillo, puedes elegir entre empezar a jugar o hacer alguna prueba del código.
+
+5. Dsifruta del juego :)
+
 
 
 Veni Vidi Vici
