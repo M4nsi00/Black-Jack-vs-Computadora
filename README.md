@@ -44,7 +44,7 @@ Salida: Mensaje, suma o perdida de puntos
 
 3. Ejecutar el archivo, se debería de poder abrir en python
 
-4. Para jugar es sencillo, puedes elegir entre empezar a jugar o hacer alguna prueba del código.
+4. Usar el archivo es sencillo, puedes elegir entre empezar a jugar o hacer alguna prueba del código.
 
 5. Dsifruta del juego :)
 
