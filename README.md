@@ -34,11 +34,13 @@ Salida: Mensaje, suma o perdida de puntos
 
 2. Descargar la carpeta Black-Jack-vs-Computador.zip
 
-3. Ejecutar el archivo, se debería de poder abrir en python
+Nota (Si descargas solo el archivo de Blacj-Jack-vs-Computadora.py no va a funcionar el juego
 
-4. Usar el archivo es sencillo, puedes elegir entre empezar a jugar o hacer alguna prueba del código.
+4. Ejecutar el archivo, se debería de poder abrir en python
 
-5. Dsifruta del juego :)
+5. Usar el archivo es sencillo, puedes elegir entre empezar a jugar o hacer alguna prueba del código.
+
+6. Dsifruta del juego :)
 
 
 
