@@ -1,38 +1,30 @@
 "Contexto"
 
-El proyecto será el juego "BlackJack", un juego de cartas en el que se tiene el objetivo de ganarle a la casa (Computadora"). Para ganarle a la computadora el jugador debe de tener o estar cerca a 21 puntos sumados en sus cartas, si el jugador tiene más puntos pierde automaticamente, si la computadora esta más cerca de los 21 puntos está gana. 
-A diferencia de la versión clásica aquí el jugador va a tener una cantidad inicial de puntos, en este caso 1000 puntos, y tiene el objetivo de conseguir 10,000 puntos, cada ronda puede decidir apostar cierta cantidad de puntos y si gana duplica el valor apostado; Si pierde e jugador perdera los puntos apostados. El juego termina cuado el jugador consigue 10,000 puntos o pierde todos sus puntos.
+El proyecto será el juego "BlackJack", un juego de cartas en el que se tiene el objetivo de ganarle a la casa (Computadora"). Para ganarle a la computadora el jugador debe de tener o estar cerca de 21 puntos sumados en sus cartas, si el jugador tiene más puntos pierde automáticamente, si la computadora está más cerca de los 21 puntos está gana. A diferencia de la versión clásica aquí el jugador va a tener una cantidad inicial de puntos, en este caso 1000 puntos, y tiene el objetivo de conseguir 10,000 puntos, cada ronda puede decidir apostar cierta cantidad de puntos y si gana duplica el valor apostado; Si pierde el jugador perderá los puntos apostados. El juego termina cuando el jugador consigue 10,000 puntos o pierde todos sus puntos.
 
 Álgoritmo:
 
 Entrada: 
 
-1. Cantidad de puntos para apostar, Semilla aleatoria para barajar las cartas
+1.	Pedir cantidad de puntos a apostar.
+   
+2.	Usar el mazo para repartir dos cartas al jugador y a la computadora.
+   
+3.	Preguntar si el jugador quiere otra carta o se queda con el valor de las primeras dos cartas.
+   
+4.	Si el jugador elige otra carta y la suma de puntos es mayor a 21 se imprime el mensaje “La casa gana” y se restan los puntos apostados por el jugador de sus puntos totales.
+   
+5.	Si la suma de puntos no es mayor a 21 se pregunta al jugador si quiere otra carta y se repite el paso anterior.
 
-2. Proceso: Pedir cantidad de puntos a apostar
+6.	Si el jugador decidió no agarrar una tercera carta es turno de la computadora.
 
-3. Crear una baraja de 52 cartas y crear mazoz para el jugador y la computadora
+7.	Si la computadora tiene 21 puntos o está más cerca que el jugador de los 21 puntos se imprime el mensaje “La casa gana” y se le restan los puntos apostados al jugador.
 
-4. Repartir dos cartas al jugador
+8.	Si el jugador esta más cerca de los 21 puntos o si tiene 21 puntos se imprime el mensaje “El jugador gana” y se le suma el doble de los puntos apostados.
 
-5. Preguntar si el jugador quiere otra carta o deja ahí su mazo
+9.	Si tanto el jugador como la computadora obtuvieron 21 puntos o la misma cantidad de puntos se imprime el mensaje “Fue un empate” y se devuelven los puntos apostados por el jugador.
 
-6. Si el jugador elige otra carta y la suma de los puntos de las cartas es mayor a 21 imprimr "La casa gana"
-
-7. Si el juagodr elige otra carta y la suma de puntos es menor a 21 cartas preguntar si quiere otra carta, en el caso que quiera otra carta verificar el paso anterior y este
-
-8. Si el jugador decide quedarse con solo dos cartas, empezar a repartir cartas a la computadora
-
-9. Si la computadora esta más cerca a los 21 puntos o tiene 21 puntos imprimir "La casa gana"
-
-10. Si el jugador esta más cerca a los 21 puntos o tiene 21 puntos imprimir "El jugador gana"
-
-11. Si tanto el jugador como la computadora obtuvieron el mismo resultado imprimr "Es un empate"
-
-12. Si el jugador gano duplicar los puntos apostados, si perdio quitarle los puntos apostados, si fue un empate devolver los puntos apostados
-
-13. Se repite este proceso hasta que el jugador pierda todos sus puntos o llegue a los 10,000 puntos, si pierde imprimir "Perdio la partida", si el jugador gana poner "Felicidades ganaste"
-
+10.	Se repite este proceso hasta que el jugador se quede sin puntos, en ese caso se imprime el mensaje “Fin del juego”, si el jugador obtiene la meta de los 10,000 puntos se imprime el mensaje “Felicidades has ganado”
 
 Salida: Mensaje, suma o perdida de puntos
 
@@ -40,7 +32,7 @@ Salida: Mensaje, suma o perdida de puntos
 
 1. Antes que nada recomiendo instalar python para poder correr el programa, puedes usar el siguiente link para eso: https://www.youtube.com/watch?v=yXoiFeK4_Sk
 
-2. Descargar el archivo Black_Jack_vs_Computadora.py.
+2. Descargar la carpeta Black-Jack-vs-Computador.zip
 
 3. Ejecutar el archivo, se debería de poder abrir en python
 
