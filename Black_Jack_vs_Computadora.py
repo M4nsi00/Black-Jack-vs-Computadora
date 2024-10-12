@@ -66,14 +66,14 @@ def partida(mazo):
     
     
     while True:
-        v = input("¿Quieres otra carta? si/no ").lower() #Turno del jugador
-        if v == "si":
+        turno = input("¿Quieres otra carta? si/no ").lower() #Turno del jugador
+        if turno == "si":
             mano_jugador.append(mazo.pop())
             print("Tu mano es:", mano_jugador, "con valor", valor_mano(mano_jugador))
             if valor_mano(mano_jugador) > 21:
                 print("Te pasaste de 21. Perdiste")
                 return -1
-        elif v == "no":
+        elif turno == "no":
             break
         else:
             print("Opción no válida.")
@@ -122,6 +122,8 @@ def black_jack():
         
         if resultados_de_la_ronda == 1:
             puntos_jugador += apuesta
+        elif resultados_de_la_ronda == 0:
+            puntos_jugador = puntos_jugador
         elif resultados_de_la_ronda == -1:
             puntos_jugador -= apuesta
             
